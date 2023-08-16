@@ -53,7 +53,6 @@ function App() {
   const selectedOrders = selectedTime
     ? orders.filter((o) => o.time === selectedTime)
     : [];
-  console.log(orders);
 
   return (
     <>
@@ -70,7 +69,9 @@ function App() {
                   {orders.map(({ id, time, type, text }) => (
                     <tr key={id}>
                       <td className="pl-0">{time.toLocaleString()}</td>
-                      <td className={`pr-0 ${getOrderClassNames(type)}`}>{text}</td>
+                      <td className={`pr-0 ${getOrderClassNames(type)}`}>
+                        {text}
+                      </td>
                     </tr>
                   ))}
                 </tbody>

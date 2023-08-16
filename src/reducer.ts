@@ -24,15 +24,6 @@ export type Action =
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case ActionType.AddOrder:
-
-    console.log({
-      id: crypto.randomUUID(),
-      ...action.payload,
-      position: action.payload.type === 'Buy' ? 'belowBar' : 'aboveBar',
-      shape: 'circle',
-      color: getOrderClassNames(action.payload.type),
-      date: new Date(action.payload.time),
-    })
       return {
         ...state,
         orders: [
